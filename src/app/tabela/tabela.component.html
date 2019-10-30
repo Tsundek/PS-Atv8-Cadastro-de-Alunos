@@ -1,0 +1,16 @@
+<div id="ta" class="container mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NOME</th>
+        <th scope="col">SEXO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of servico.lista" (contextmenu)="excluir(item)">
+        <td>{{item.nome}}</td>
+        <td>{{item.sexo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

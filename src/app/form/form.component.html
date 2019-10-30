@@ -1,0 +1,18 @@
+<form (ngSubmit)="salvar(); f.resetForm()" #f="ngForm">
+  <div class="container">
+    <div class="form-group"> 
+      <label>Nome</label>
+      <input type="text" class="form-control" [(ngModel)]="aluno.nome" name="nome" #name="ngModel" required> 
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger"> Nome é obrigatório</div>
+    </div>
+    <div class="form-group">
+      <label>Sexo</label>  
+      <div class="form-group"> 
+        <label class="radio-inline mr-3"><input class="mr-1" type="radio"[(ngModel)]="aluno.sexo" name="sexo" value="Feminino">Feminino</label>
+        <label class="radio-inline"><input class="mr-1" type="radio"[(ngModel)]="aluno.sexo" name="sexo" value="Masculino">Masculino</label>
+      </div>
+    </div>  
+    <button type="salvar" class="btn btn-success mr-3"[disabled]="!f.form.valid">Salvar</button>
+    <button type="reset" class="btn btn-secondary">Limpar</button>
+  </div>
+</form>
